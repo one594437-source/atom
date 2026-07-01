@@ -1,68 +1,47 @@
-```html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>GitHub</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<title>Artur Glowacki</title>
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Inter',sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-    background:#050505;
-    overflow:hidden;
-    height:100vh;
-    color:white;
+html, body {
+    width: 100%;
+    min-height: 100%;
+    background: #ffffff;
+    overflow-x: hidden;
 }
 
-.bg{
-    position:fixed;
-    width:100%;
-    height:100%;
-    background:
-    radial-gradient(circle at top left,#1d4ed8 0%,transparent 30%),
-    radial-gradient(circle at bottom right,#7c3aed 0%,transparent 30%),
-    #050505;
-    opacity:0.8;
-    z-index:-1;
+.page {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background: #ffffff;
 }
 
-header{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
-}
-
-.logo{
-    font-size:64px;
-    font-weight:900;
-    letter-spacing:4px;
-    color:white;
-    text-transform:none;
-    text-align:center;
-    white-space:nowrap;
+.page img {
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    display: block;
 }
 </style>
 </head>
 
 <body>
 
-<div class="bg"></div>
-
-<header>
-    <div class="logo">Artur Glowacki</div>
-</header>
+<div class="page">
+    <img src="Lebenslauf_ARG.pdf (10).png" alt="Artur Glowacki">
+</div>
 
 </body>
 </html>
-```
