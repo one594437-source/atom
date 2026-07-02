@@ -3,50 +3,435 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tłumaczenia | Artur Glowacki</title>
+<title>Artur Glowacki | Reprezentacja Biznesowa</title>
+
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
 html{scroll-behavior:smooth}
 body{background:#07111f;color:white;line-height:1.6}
 a{text-decoration:none;color:inherit}
-.topbar{position:fixed;top:0;left:0;width:100%;z-index:1000;padding:18px 8%;display:flex;justify-content:space-between;align-items:center;background:rgba(7,17,31,.82);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.08)}
+
+.topbar{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+z-index:1000;
+padding:18px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(7,17,31,.82);
+backdrop-filter:blur(14px);
+border-bottom:1px solid rgba(255,255,255,.08)
+}
+
 .brand{font-size:20px;font-weight:900;letter-spacing:1px}
-.nav-area{display:flex;align-items:center;gap:18px}
-.dropdown{position:relative}
-.dropdown-btn{background:#0f1d33;color:white;border:1px solid rgba(255,255,255,.2);padding:10px 16px;border-radius:10px;font-weight:800;cursor:pointer}
-.dropdown-menu{display:none;position:absolute;right:0;top:48px;min-width:220px;background:#0f1d33;border:1px solid rgba(255,255,255,.16);border-radius:14px;box-shadow:0 20px 60px rgba(0,0,0,.35);overflow:hidden}
-.dropdown:hover .dropdown-menu{display:block}
-.dropdown-menu a{display:block;padding:14px 18px;color:#e5e7eb;font-weight:700}
-.dropdown-menu a:hover{background:#f59e0b;color:#111827}
-.lang-select{background:#0f1d33;color:white;border:1px solid rgba(255,255,255,.2);padding:10px 14px;border-radius:10px;font-weight:700;cursor:pointer}
-.hero{min-height:100vh;padding:130px 8% 70px;background:radial-gradient(circle at top left,#2563eb55,transparent 35%),radial-gradient(circle at bottom right,#f59e0b44,transparent 35%),#07111f;text-align:center}
-.badge{display:inline-block;padding:10px 18px;border:1px solid #fbbf24;color:#fbbf24;border-radius:999px;font-weight:700;margin-bottom:25px}
-h1{font-size:58px;line-height:1.05;margin-bottom:18px}
-.subtitle{font-size:20px;color:#cbd5e1;max-width:800px;margin:0 auto 38px}
-.price-table-wrap{max-width:760px;margin:0 auto 35px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:24px;overflow:hidden;box-shadow:0 20px 70px rgba(0,0,0,.35)}
-.price-table{width:100%;border-collapse:collapse}
-.price-table th{background:#f59e0b;color:#111827;font-size:22px;padding:18px;text-align:left}
-.price-table td{padding:20px 18px;border-top:1px solid rgba(255,255,255,.12);font-size:21px;color:#e5e7eb}
-.price-table td.price{font-size:28px;font-weight:900;color:#fbbf24}
-.price-table td.time{font-weight:800}
-.price-table tr:hover{background:rgba(245,158,11,.12)}
-.note{max-width:850px;margin:30px auto 0;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:24px;padding:30px;color:#e5e7eb;font-size:20px}
-.bank{margin-top:22px;color:#fbbf24;font-weight:900;font-size:22px;line-height:1.8}
-footer{text-align:center;padding:25px;color:#94a3b8;background:#01040a}
-@media(max-width:900px){.topbar{padding:14px 6%}.nav-area{gap:10px}.dropdown-menu{right:auto;left:0}.dropdown-btn,.lang-select{padding:9px 10px;font-size:13px}.hero{padding:115px 6% 55px}h1{font-size:42px}.price-table th,.price-table td{font-size:18px}.price-table td.price{font-size:24px}}
+
+.nav{
+display:flex;
+align-items:center;
+gap:18px;
+}
+
+.nav a{
+font-weight:700;
+color:white;
+}
+
+.dropdown{
+position:relative;
+}
+
+.dropbtn{
+background:#0f1d33;
+color:white;
+border:1px solid rgba(255,255,255,.2);
+padding:10px 14px;
+border-radius:10px;
+font-weight:700;
+cursor:pointer;
+}
+
+.dropdown-content{
+display:none;
+position:absolute;
+right:0;
+top:48px;
+background:#0f1d33;
+min-width:190px;
+border-radius:12px;
+overflow:hidden;
+border:1px solid rgba(255,255,255,.15);
+box-shadow:0 20px 50px rgba(0,0,0,.4);
+}
+
+.dropdown-content a{
+display:block;
+padding:14px 18px;
+color:white;
+}
+
+.dropdown-content a:hover{
+background:#fbbf24;
+color:#111;
+}
+
+.dropdown:hover .dropdown-content{
+display:block;
+}
+
+.lang-select{
+background:#0f1d33;
+color:white;
+border:1px solid rgba(255,255,255,.2);
+padding:10px 14px;
+border-radius:10px;
+font-weight:700;
+cursor:pointer
+}
+
+.hero{
+min-height:100vh;
+display:grid;
+grid-template-columns:1.1fr .9fr;
+gap:50px;
+align-items:center;
+padding:120px 8% 70px;
+background:
+radial-gradient(circle at top left,#2563eb55,transparent 35%),
+radial-gradient(circle at bottom right,#f59e0b44,transparent 35%),
+#07111f
+}
+
+.badge{
+display:inline-block;
+padding:10px 18px;
+border:1px solid #fbbf24;
+color:#fbbf24;
+border-radius:999px;
+font-weight:700;
+margin-bottom:25px
+}
+
+h1{
+font-size:68px;
+line-height:1.05;
+margin-bottom:20px
+}
+
+.hero h2{
+font-size:26px;
+color:#cbd5e1;
+margin-bottom:25px;
+font-weight:500
+}
+
+.hero p{
+font-size:19px;
+color:#dbeafe;
+max-width:720px;
+margin-bottom:35px
+}
+
+.buttons{
+display:flex;
+gap:16px;
+flex-wrap:wrap
+}
+
+.btn{
+padding:16px 28px;
+border-radius:12px;
+font-weight:800;
+display:inline-block;
+transition:.25s
+}
+
+.btn:hover{
+transform:translateY(-3px)
+}
+
+.primary{
+background:#f59e0b;
+color:#111827
+}
+
+.secondary{
+border:1px solid #94a3b8;
+color:white
+}
+
+.profile-card{
+background:rgba(255,255,255,.08);
+border:1px solid rgba(255,255,255,.15);
+border-radius:28px;
+padding:18px;
+box-shadow:0 30px 90px rgba(0,0,0,.35)
+}
+
+.profile-card img{
+width:100%;
+display:block;
+border-radius:20px
+}
+
+.sales-banner{
+background:linear-gradient(135deg,#07111f,#0f1d33);
+padding:110px 30px;
+text-align:center;
+border-top:1px solid rgba(255,255,255,.08);
+border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.sales-banner h2{
+font-size:64px;
+color:#fff;
+font-weight:900;
+line-height:1.1;
+margin-bottom:20px;
+}
+
+.sales-banner h3{
+color:#fbbf24;
+font-size:44px;
+margin-bottom:30px;
+font-weight:800;
+}
+
+.sales-banner p{
+max-width:900px;
+margin:auto;
+font-size:22px;
+color:#d1d5db;
+line-height:1.8;
+margin-bottom:40px;
+}
+
+.sales-btn{
+display:inline-block;
+padding:18px 40px;
+background:#fbbf24;
+color:#111;
+text-decoration:none;
+font-size:22px;
+font-weight:800;
+border-radius:12px;
+transition:.3s;
+}
+
+.sales-btn:hover{
+transform:translateY(-3px);
+box-shadow:0 15px 35px rgba(251,191,36,.35);
+}
+
+.video-section{
+padding:70px 8%;
+background:#0b1628
+}
+
+.video-wrap{
+max-width:1200px;
+margin:auto;
+display:grid;
+grid-template-columns:.9fr 1.1fr;
+gap:36px;
+align-items:center
+}
+
+.video-text h2{
+font-size:42px;
+margin-bottom:15px;
+color:#fbbf24
+}
+
+.video-text p{
+color:#cbd5e1;
+font-size:19px;
+max-width:650px
+}
+
+.intro-video{
+width:380px;
+max-width:100%;
+display:block;
+margin:auto;
+border-radius:22px;
+box-shadow:0 20px 70px rgba(0,0,0,.45);
+border:1px solid rgba(255,255,255,.16);
+background:#000
+}
+
+section{
+padding:80px 8%
+}
+
+.title{
+text-align:center;
+font-size:42px;
+margin-bottom:45px
+}
+
+.services{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:24px;
+max-width:1200px;
+margin:auto
+}
+
+.card{
+background:#0f1d33;
+border:1px solid rgba(255,255,255,.1);
+border-radius:22px;
+padding:32px;
+transition:.25s
+}
+
+.card:hover{
+transform:translateY(-6px);
+border-color:#fbbf24
+}
+
+.card h3{
+font-size:24px;
+margin-bottom:14px;
+color:#fbbf24
+}
+
+.card p{
+color:#cbd5e1
+}
+
+.languages{
+background:#0b1628
+}
+
+.lang-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:24px;
+max-width:1200px;
+margin:auto
+}
+
+.lang{
+background:white;
+color:#111827;
+border-radius:22px;
+padding:32px
+}
+
+.lang h3{
+font-size:28px;
+margin-bottom:12px
+}
+
+.lang p{
+color:#374151
+}
+
+.about{
+background:#07111f
+}
+
+.about-box{
+max-width:1000px;
+margin:auto;
+text-align:center
+}
+
+.about-box p{
+color:#cbd5e1;
+font-size:20px
+}
+
+.contact{
+text-align:center;
+background:#020617
+}
+
+.contact p{
+font-size:20px;
+color:#cbd5e1;
+margin-bottom:30px
+}
+
+footer{
+text-align:center;
+padding:25px;
+color:#94a3b8;
+background:#01040a
+}
+
+@media(max-width:900px){
+.topbar{
+padding:14px 6%;
+flex-wrap:wrap;
+gap:12px;
+}
+
+.nav{
+gap:10px;
+}
+
+.hero{
+grid-template-columns:1fr;
+text-align:center;
+padding:130px 6% 50px
+}
+
+h1{
+font-size:46px
+}
+
+.buttons{
+justify-content:center
+}
+
+.services,.lang-grid,.video-wrap{
+grid-template-columns:1fr
+}
+
+.video-wrap{
+text-align:center
+}
+
+.video-text p{
+margin:auto
+}
+
+.sales-banner h2{
+font-size:40px;
+}
+
+.sales-banner h3{
+font-size:30px;
+}
+
+.sales-banner p{
+font-size:18px;
+}
+}
 </style>
 </head>
+
 <body>
+
 <div class="topbar">
-  <div class="brand"><a href="index.html">Artur Glowacki</a></div>
-  <div class="nav-area">
+  <div class="brand">Artur Glowacki</div>
+
+  <div class="nav">
     <div class="dropdown">
-      <button class="dropdown-btn" type="button">Menu ▾</button>
-      <div class="dropdown-menu">
+      <button class="dropbtn">Menu ▾</button>
+      <div class="dropdown-content">
         <a href="index.html">Strona główna</a>
         <a href="tlumaczenia.html">Tłumaczenia</a>
+        <a href="#services">Usługi</a>
+        <a href="#contact">Kontakt</a>
       </div>
     </div>
+
     <select class="lang-select" id="languageSelect">
       <option value="pl">🇵🇱 Polski</option>
       <option value="de">🇩🇪 Deutsch</option>
@@ -55,60 +440,237 @@ footer{text-align:center;padding:25px;color:#94a3b8;background:#01040a}
   </div>
 </div>
 
-<main class="hero">
-  <span class="badge">Tłumaczenia biznesowe</span>
-  <h1>Cennik tłumaczeń</h1>
+<header class="hero">
+  <div>
+    <span class="badge" data-i18n="badge">Reprezentacja biznesowa • Polski / Niemiecki / Angielski</span>
 
+    <h1>Artur Glowacki</h1>
 
-  <div class="price-table-wrap">
-    <table class="price-table">
-      <thead>
-        <tr>
-          <th>Pakiet</th>
-          <th>Czas rozmowy</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="price">25€</td>
-          <td class="time">15 min</td>
-        </tr>
-        <tr>
-          <td class="price">100€</td>
-          <td class="time">60 min</td>
-        </tr>
-        <tr>
-          <td class="price">250€</td>
-          <td class="time">150 min</td>
-        </tr>
-        <tr>
-          <td class="price">500€</td>
-          <td class="time">300 min</td>
-        </tr>
-        <tr>
-          <td class="price">1000€</td>
-          <td class="time">600 min</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+    <h2 data-i18n="heroSubtitle">Przedsiębiorca • Reprezentant biznesowy • Tłumacz</h2>
 
-  <div class="note">
-    Jeśli wyślesz przelew ekspresowy, odwdzięczę się dodając czas rozmowy do każdego spotkania. Ja nie muszę czekać, Ty masz więcej czasu gratis!
-    <div class="bank">
-      Przelew ekspresowy wykonaj tutaj:<br>
-      DE67 1001 1001 2901 1394 04<br>
-      NTSBDEB1XXX<br>
-      Odbiorca: Artur Glowacki
+    <p data-i18n="heroText">
+      Pomagam firmom w profesjonalnej komunikacji, reprezentacji podczas spotkań biznesowych oraz współpracy międzynarodowej.
+      Oferuję wsparcie w języku polskim, niemieckim i angielskim.
+    </p>
+
+    <div class="buttons">
+      <a class="btn primary" href="mailto:asc743648@gmail.com" data-i18n="contactBtn">Skontaktuj się</a>
+      <a class="btn secondary" href="tlumaczenia.html" data-i18n="servicesBtn">Zobacz usługi</a>
     </div>
   </div>
-</main>
 
-<footer>© 2026 Artur Glowacki. Wszelkie prawa zastrzeżone.</footer>
+  <div class="profile-card">
+    <img src="Lebenslauf_ARG.pdf (10).png" alt="Artur Glowacki">
+  </div>
+</header>
+
+<section class="sales-banner">
+  <h2>Mogę sprzedawać Twoje produkty w Austrii.</h2>
+
+  <h3>Sprzedaż to klucz!</h3>
+
+  <p>
+    Reprezentuję firmy podczas spotkań handlowych, prowadzę rozmowy z klientami
+    oraz pomagam zdobywać nowych partnerów biznesowych na rynku austriackim.
+  </p>
+
+  <a href="tlumaczenia.html" class="sales-btn">Rozpocznij współpracę</a>
+</section>
+
+<section class="video-section">
+  <div class="video-wrap">
+    <video class="intro-video" controls autoplay muted loop playsinline>
+      <source src="1000012264_compressed.mp4" type="video/mp4">
+      Twoja przeglądarka nie obsługuje wideo.
+    </video>
+
+    <div class="video-text">
+      <h2 data-i18n="videoTitle">Poznaj mnie</h2>
+
+      <p data-i18n="videoText">
+        Krótki materiał wideo pozwala lepiej poznać osobę, z którą możesz współpracować.
+        Film odtwarza się automatycznie bez dźwięku, a dźwięk można włączyć ręcznie w odtwarzaczu.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <h2 class="title" data-i18n="servicesTitle">Usługi</h2>
+
+  <div class="services">
+    <div class="card">
+      <h3 data-i18n="service1Title">Reprezentacja firm</h3>
+      <p data-i18n="service1Text">
+        Uczestniczę w spotkaniach biznesowych, gdzie mogę reprezentować Twoją firmę,
+        wspierać rozmowy z partnerami i budować profesjonalny wizerunek.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3 data-i18n="service2Title">Tłumaczenia biznesowe</h3>
+      <p data-i18n="service2Text">
+        Oferuję tłumaczenie podczas spotkań, rozmów, projektów i prezentacji
+        w języku polskim, niemieckim oraz angielskim.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3 data-i18n="service3Title">Wsparcie międzynarodowe</h3>
+      <p data-i18n="service3Text">
+        Pomagam w komunikacji z partnerami zagranicznymi oraz przy projektach
+        prowadzonych w Polsce, Niemczech i za granicą.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="about">
+  <div class="about-box">
+    <h2 class="title" data-i18n="aboutTitle">O mnie</h2>
+
+    <p data-i18n="aboutText">
+      Jestem przedsiębiorcą, reprezentantem biznesowym oraz tłumaczem.
+      Uczestniczę w spotkaniach biznesowych, gdzie mogę reprezentować Twoją firmę,
+      wspierać projekt oraz tłumaczyć rozmowy pomiędzy partnerami.
+      Płynnie posługuję się językiem polskim, niemieckim i angielskim.
+    </p>
+  </div>
+</section>
+
+<section class="languages">
+  <h2 class="title" data-i18n="languagesTitle">Języki</h2>
+
+  <div class="lang-grid">
+    <div class="lang">
+      <h3 data-i18n="plTitle">🇵🇱 Polski</h3>
+      <p data-i18n="plText">Język ojczysty.</p>
+    </div>
+
+    <div class="lang">
+      <h3 data-i18n="deTitle">🇩🇪 Niemiecki</h3>
+      <p data-i18n="deText">Płynna komunikacja biznesowa.</p>
+    </div>
+
+    <div class="lang">
+      <h3 data-i18n="enTitle">🇬🇧 Angielski</h3>
+      <p data-i18n="enText">Płynna komunikacja międzynarodowa.</p>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <h2 class="title" data-i18n="contactTitle">Kontakt</h2>
+
+  <p data-i18n="contactText">Zapraszam do kontaktu w sprawie współpracy.</p>
+
+  <a class="btn primary" href="mailto:asc743648@gmail.com">asc743648@gmail.com</a>
+</section>
+
+<footer data-i18n="footer">
+  © 2026 Artur Glowacki. Wszelkie prawa zastrzeżone.
+</footer>
 
 <script>
+const translations={
+pl:{
+badge:"Reprezentacja biznesowa • Polski / Niemiecki / Angielski",
+heroSubtitle:"Przedsiębiorca • Reprezentant biznesowy • Tłumacz",
+heroText:"Pomagam firmom w profesjonalnej komunikacji, reprezentacji podczas spotkań biznesowych oraz współpracy międzynarodowej. Reprezentuję firmy, uczestniczę w projektach oraz oferuję profesjonalne tłumaczenia podczas spotkań biznesowych.",
+contactBtn:"Skontaktuj się",
+servicesBtn:"Zobacz usługi",
+videoTitle:"Poznaj mnie",
+videoText:"Krótki materiał wideo pozwala lepiej poznać osobę, z którą możesz współpracować. Film odtwarza się automatycznie bez dźwięku, a dźwięk można włączyć ręcznie w odtwarzaczu.",
+servicesTitle:"Usługi",
+service1Title:"Reprezentacja firm",
+service1Text:"Reprezentuję Twoją firmę podczas spotkań biznesowych, negocjacji oraz rozmów z partnerami.",
+service2Title:"Tłumaczenia biznesowe",
+service2Text:"Tłumaczę spotkania biznesowe oraz projekty w języku polskim, niemieckim i angielskim.",
+service3Title:"Wsparcie międzynarodowe",
+service3Text:"Pomagam firmom rozwijać współpracę międzynarodową i prowadzić skuteczną komunikację.",
+aboutTitle:"O mnie",
+aboutText:"Jestem przedsiębiorcą oraz reprezentantem biznesowym. Uczestniczę w spotkaniach biznesowych, reprezentuję firmy, wspieram projekty oraz zapewniam profesjonalne tłumaczenie pomiędzy językiem polskim, niemieckim i angielskim.",
+languagesTitle:"Języki",
+plTitle:"🇵🇱 Polski",
+plText:"Język ojczysty.",
+deTitle:"🇩🇪 Niemiecki",
+deText:"Płynna komunikacja biznesowa.",
+enTitle:"🇬🇧 Angielski",
+enText:"Płynna komunikacja międzynarodowa.",
+contactTitle:"Kontakt",
+contactText:"Zapraszam do kontaktu w sprawie współpracy.",
+footer:"© 2026 Artur Glowacki. Wszelkie prawa zastrzeżone."
+},
+de:{
+badge:"Unternehmensvertretung • Deutsch / Polnisch / Englisch",
+heroSubtitle:"Unternehmer • Unternehmensvertreter • Dolmetscher",
+heroText:"Ich unterstütze Unternehmen bei professioneller Kommunikation, Geschäftstreffen und internationaler Zusammenarbeit. Ich vertrete Firmen, nehme an Projekten teil und dolmetsche bei geschäftlichen Gesprächen.",
+contactBtn:"Kontakt aufnehmen",
+servicesBtn:"Leistungen",
+videoTitle:"Lernen Sie mich kennen",
+videoText:"Ein kurzes Video hilft Ihnen, die Person hinter der Zusammenarbeit besser kennenzulernen. Das Video startet automatisch ohne Ton; den Ton können Sie im Player manuell einschalten.",
+servicesTitle:"Dienstleistungen",
+service1Title:"Unternehmensvertretung",
+service1Text:"Ich vertrete Ihr Unternehmen bei Geschäftstreffen, Verhandlungen und Gesprächen mit Partnern.",
+service2Title:"Geschäftsdolmetschen",
+service2Text:"Professionelles Dolmetschen bei Meetings, Gesprächen und Projekten auf Deutsch, Polnisch und Englisch.",
+service3Title:"Internationale Unterstützung",
+service3Text:"Ich unterstütze Unternehmen bei internationaler Zusammenarbeit und klarer Kommunikation.",
+aboutTitle:"Über mich",
+aboutText:"Ich bin Unternehmer, Unternehmensvertreter und Dolmetscher. Ich nehme an Geschäftstreffen teil, vertrete Unternehmen, unterstütze Projekte und ermögliche professionelle Kommunikation auf Deutsch, Polnisch und Englisch.",
+languagesTitle:"Sprachen",
+plTitle:"🇵🇱 Polnisch",
+plText:"Muttersprache.",
+deTitle:"🇩🇪 Deutsch",
+deText:"Fließende Geschäftskommunikation.",
+enTitle:"🇬🇧 Englisch",
+enText:"Fließende internationale Kommunikation.",
+contactTitle:"Kontakt",
+contactText:"Kontaktieren Sie mich gerne für eine Zusammenarbeit.",
+footer:"© 2026 Artur Glowacki. Alle Rechte vorbehalten."
+},
+en:{
+badge:"Business Representation • Polish / German / English",
+heroSubtitle:"Entrepreneur • Business Representative • Interpreter",
+heroText:"I help companies with professional communication, business meetings and international cooperation. I represent companies, participate in projects and provide professional interpreting during business meetings.",
+contactBtn:"Contact Me",
+servicesBtn:"View Services",
+videoTitle:"Get to know me",
+videoText:"A short video helps you better understand the person you may cooperate with. The video plays automatically without sound, and sound can be enabled manually in the player.",
+servicesTitle:"Services",
+service1Title:"Business Representation",
+service1Text:"I represent your company during business meetings, negotiations and conversations with partners.",
+service2Title:"Business Interpreting",
+service2Text:"I provide interpreting during meetings, conversations, projects and presentations in Polish, German and English.",
+service3Title:"International Support",
+service3Text:"I help companies develop international cooperation and communicate effectively.",
+aboutTitle:"About Me",
+aboutText:"I am an entrepreneur and business representative. I participate in business meetings, represent companies, support projects and provide professional interpreting between Polish, German and English.",
+languagesTitle:"Languages",
+plTitle:"🇵🇱 Polish",
+plText:"Native language.",
+deTitle:"🇩🇪 German",
+deText:"Fluent business communication.",
+enTitle:"🇬🇧 English",
+enText:"Fluent international communication.",
+contactTitle:"Contact",
+contactText:"Feel free to contact me regarding cooperation.",
+footer:"© 2026 Artur Glowacki. All rights reserved."
+}
+};
+
 const selector=document.getElementById("languageSelect");
-selector.addEventListener("change",function(){document.documentElement.lang=this.value;});
+
+selector.addEventListener("change",function(){
+const lang=this.value;
+document.documentElement.lang=lang;
+
+document.querySelectorAll("[data-i18n]").forEach(el=>{
+const key=el.dataset.i18n;
+if(translations[lang][key]) el.textContent=translations[lang][key];
+});
+});
 </script>
+
 </body>
 </html>
