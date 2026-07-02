@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tłumaczenia | Artur Glowacki</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
+html{scroll-behavior:smooth}
+body{background:#07111f;color:white;line-height:1.6}
+a{text-decoration:none;color:inherit}
+.topbar{position:fixed;top:0;left:0;width:100%;z-index:1000;padding:18px 8%;display:flex;justify-content:space-between;align-items:center;background:rgba(7,17,31,.82);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.08)}
+.brand{font-size:20px;font-weight:900;letter-spacing:1px}
+.nav-area{display:flex;align-items:center;gap:18px}
+.dropdown{position:relative}
+.dropdown-btn{background:#0f1d33;color:white;border:1px solid rgba(255,255,255,.2);padding:10px 16px;border-radius:10px;font-weight:800;cursor:pointer}
+.dropdown-menu{display:none;position:absolute;right:0;top:48px;min-width:220px;background:#0f1d33;border:1px solid rgba(255,255,255,.16);border-radius:14px;box-shadow:0 20px 60px rgba(0,0,0,.35);overflow:hidden}
+.dropdown:hover .dropdown-menu{display:block}
+.dropdown-menu a{display:block;padding:14px 18px;color:#e5e7eb;font-weight:700}
+.dropdown-menu a:hover{background:#f59e0b;color:#111827}
+.lang-select{background:#0f1d33;color:white;border:1px solid rgba(255,255,255,.2);padding:10px 14px;border-radius:10px;font-weight:700;cursor:pointer}
+.hero{min-height:100vh;padding:130px 8% 70px;background:radial-gradient(circle at top left,#2563eb55,transparent 35%),radial-gradient(circle at bottom right,#f59e0b44,transparent 35%),#07111f;text-align:center}
+.badge{display:inline-block;padding:10px 18px;border:1px solid #fbbf24;color:#fbbf24;border-radius:999px;font-weight:700;margin-bottom:25px}
+h1{font-size:58px;line-height:1.05;margin-bottom:18px}
+.subtitle{font-size:20px;color:#cbd5e1;max-width:800px;margin:0 auto 38px}
+.price-table-wrap{max-width:760px;margin:0 auto 35px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:24px;overflow:hidden;box-shadow:0 20px 70px rgba(0,0,0,.35)}
+.price-table{width:100%;border-collapse:collapse}
+.price-table th{background:#f59e0b;color:#111827;font-size:22px;padding:18px;text-align:left}
+.price-table td{padding:20px 18px;border-top:1px solid rgba(255,255,255,.12);font-size:21px;color:#e5e7eb}
+.price-table td.price{font-size:28px;font-weight:900;color:#fbbf24}
+.price-table td.time{font-weight:800}
+.price-table tr:hover{background:rgba(245,158,11,.12)}
+.note{max-width:850px;margin:30px auto 0;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:24px;padding:30px;color:#e5e7eb;font-size:20px}
+.bank{margin-top:22px;color:#fbbf24;font-weight:900;font-size:22px;line-height:1.8}
+footer{text-align:center;padding:25px;color:#94a3b8;background:#01040a}
+@media(max-width:900px){.topbar{padding:14px 6%}.nav-area{gap:10px}.dropdown-menu{right:auto;left:0}.dropdown-btn,.lang-select{padding:9px 10px;font-size:13px}.hero{padding:115px 6% 55px}h1{font-size:42px}.price-table th,.price-table td{font-size:18px}.price-table td.price{font-size:24px}}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="brand"><a href="index.html">Artur Glowacki</a></div>
+  <div class="nav-area">
+    <div class="dropdown">
+      <button class="dropdown-btn" type="button">Menu ▾</button>
+      <div class="dropdown-menu">
+        <a href="index.html">Strona główna</a>
+        <a href="tlumaczenia.html">Tłumaczenia</a>
+      </div>
+    </div>
+    <select class="lang-select" id="languageSelect">
+      <option value="pl">🇵🇱 Polski</option>
+      <option value="de">🇩🇪 Deutsch</option>
+      <option value="en">🇬🇧 English</option>
+    </select>
+  </div>
+</div>
+
+<main class="hero">
+  <span class="badge">Tłumaczenia biznesowe</span>
+  <h1>Cennik tłumaczeń</h1>
+  <p class="subtitle">Cennik tłumaczeń online. Linki Stripe możesz później dodać osobno do każdej pozycji.</p>
+
+  <div class="price-table-wrap">
+    <table class="price-table">
+      <thead>
+        <tr>
+          <th>Pakiet</th>
+          <th>Czas rozmowy</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="price">25€</td>
+          <td class="time">15 min</td>
+        </tr>
+        <tr>
+          <td class="price">100€</td>
+          <td class="time">60 min</td>
+        </tr>
+        <tr>
+          <td class="price">250€</td>
+          <td class="time">150 min</td>
+        </tr>
+        <tr>
+          <td class="price">500€</td>
+          <td class="time">300 min</td>
+        </tr>
+        <tr>
+          <td class="price">1000€</td>
+          <td class="time">600 min</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    Jeśli wyślesz przelew ekspresowy, odwdzięczę się dodając czas rozmowy do każdego spotkania. Ja nie muszę czekać, Ty masz więcej czasu gratis!
+    <div class="bank">
+      Przelew ekspresowy wykonaj tutaj:<br>
+      DE XXXX<br>
+      NTSE<br>
+      Odbiorca: Artur Glowacki
+    </div>
+  </div>
+</main>
+
+<footer>© 2026 Artur Glowacki. Wszelkie prawa zastrzeżone.</footer>
+
+<script>
+const selector=document.getElementById("languageSelect");
+selector.addEventListener("change",function(){document.documentElement.lang=this.value;});
+</script>
+</body>
+</html>
